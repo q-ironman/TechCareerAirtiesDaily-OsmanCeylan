@@ -5,7 +5,13 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
 public class DailyNotFoundException extends RuntimeException{
-    public DailyNotFoundException() {
-        super();
+    private String message;
+
+    public DailyNotFoundException() {}
+
+    public DailyNotFoundException(String msg)
+    {
+        super(msg);
+        this.message = msg;
     }
 }

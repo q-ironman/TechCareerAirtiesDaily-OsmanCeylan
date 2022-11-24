@@ -4,6 +4,7 @@ import com.example.osmanceylan.bean.ModelMapperBean;
 import com.example.osmanceylan.dto.DailyDto;
 import com.example.osmanceylan.entity.Daily;
 import com.example.osmanceylan.exception.DailyNotFoundException;
+import com.example.osmanceylan.exception.ExceptionMessages;
 import com.example.osmanceylan.repository.IDailyRepository;
 import com.example.osmanceylan.service.IDailyService;
 import lombok.RequiredArgsConstructor;
@@ -57,14 +58,14 @@ public class DailyService implements IDailyService {
     //Find
     @Override
     public DailyDto find(Long id) {
-        Daily entity = repository.findById(id).orElseThrow(() -> new DailyNotFoundException());
+        Daily entity = repository.findById(id).orElseThrow(() -> new DailyNotFoundException(ExceptionMessages.dailyNotFoundMessage));
         return entity2Dto(entity);
     }
 
     // Update
     @Override
     public DailyDto update(Long id, DailyDto dailyDto) {
-        Daily entity = repository.findById(id).orElseThrow(() -> new DailyNotFoundException());
+        Daily entity = repository.findById(id).orElseThrow(() -> new DailyNotFoundException(ExceptionMessages.dailyNotFoundMessage));
         entity.setName(dailyDto.getName());
         entity.setDescription(dailyDto.getDescription());
         repository.save(entity);
@@ -74,7 +75,7 @@ public class DailyService implements IDailyService {
     // Delete
     @Override
     public Map<String, Boolean> delete(Long id) {
-        Daily entity = repository.findById(id).orElseThrow(() -> new DailyNotFoundException());
+        Daily entity = repository.findById(id).orElseThrow(() -> new DailyNotFoundException(ExceptionMessages.dailyNotFoundMessage));
         repository.delete(entity);
         Map<String,Boolean> response = new HashMap<>();
         response.put("deleted",true);
