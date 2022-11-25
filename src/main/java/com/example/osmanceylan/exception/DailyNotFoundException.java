@@ -9,9 +9,5 @@ public class DailyNotFoundException extends RuntimeException{
 
     public DailyNotFoundException() {}
 
-    public DailyNotFoundException(String msg)
-    {
-        super(msg);
-        this.message = msg;
-    }
+
 }

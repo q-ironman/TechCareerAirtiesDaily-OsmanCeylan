@@ -58,14 +58,14 @@ public class DailyService implements IDailyService {
     //Find
     @Override
     public DailyDto find(Long id) {
-        Daily entity = repository.findById(id).orElseThrow(() -> new DailyNotFoundException(ExceptionMessages.dailyNotFoundMessage));
+        Daily entity = repository.findById(id).orElseThrow(() -> new DailyNotFoundException());
         return entity2Dto(entity);
     }
 
     // Update
     @Override
     public DailyDto update(Long id, DailyDto dailyDto) {
-        Daily entity = repository.findById(id).orElseThrow(() -> new DailyNotFoundException(ExceptionMessages.dailyNotFoundMessage));
+        Daily entity = repository.findById(id).orElseThrow(() -> new DailyNotFoundException());
         entity.setName(dailyDto.getName());
         entity.setDescription(dailyDto.getDescription());
         repository.save(entity);
@@ -75,7 +75,7 @@ public class DailyService implements IDailyService {
     // Delete
     @Override
     public Map<String, Boolean> delete(Long id) {
-        Daily entity = repository.findById(id).orElseThrow(() -> new DailyNotFoundException(ExceptionMessages.dailyNotFoundMessage));
+        Daily entity = repository.findById(id).orElseThrow(() -> new DailyNotFoundException());
         repository.delete(entity);
         Map<String,Boolean> response = new HashMap<>();
         response.put("deleted",true);
