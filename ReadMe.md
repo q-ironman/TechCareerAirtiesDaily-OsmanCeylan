@@ -1,15 +1,15 @@
-### Technologies
-# Java SE
-# Java EE
-# Spring Boot
+# Technologies
+Java SE
+Java EE
+Spring Boot
 ```shell
 Spring Data 
 Spring Core
 Spring REST
 ```
-# PostgreSQL
-# Hibernate Validator
-### EndPoints
+PostgreSQL
+Hibernate Validator
+# EndPoints
 ```shell
 # CREATE
 http://localhost:7070/api/daily/v1/create
