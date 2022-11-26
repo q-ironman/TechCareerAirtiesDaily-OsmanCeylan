@@ -1,7 +1,7 @@
 # Technologies
-Java SE
-Java EE
-Spring Boot
+*Java SE
+*Java EE
+*Spring Boot
 ```shell
 Spring Data 
 Spring Core
