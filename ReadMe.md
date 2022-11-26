@@ -1,4 +1,4 @@
-## Technologies
+### Technologies
 # Java SE
 # Java EE
 # Spring Boot
@@ -9,7 +9,7 @@ Spring REST
 ```
 # PostgreSQL
 # Hibernate Validator
-## EndPoints
+### EndPoints
 ```shell
 # CREATE
 http://localhost:7070/api/daily/v1/create
