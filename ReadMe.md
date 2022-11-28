@@ -8,4 +8,3 @@ Spring Core
 Spring REST
 ```
 * PostgreSQL
-* Hibernate Validator
